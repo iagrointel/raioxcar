@@ -1,0 +1,14 @@
+# segredos — NUNCA versionar
+.env
+*.key
+*.pem
+credentials*.json
+*token*
+# artefatos pesados / dados
+cache/
+*.tif
+*.tiff
+*.pdf
+__pycache__/
+.venv/
+.DS_Store

@@ -1,0 +1,68 @@
+[
+ {
+  "uf": "AC",
+  "biomas": "Amazônia (100%; toda na Amazônia Legal)",
+  "rl_regra": "RL 80% (floresta, Amazônia Legal, art.12 I). Redução a até 50% via ZEE (Lei est. 1.904/2007) só p/ consolidado pré-22/07/2008, não automática.",
+  "pra": "Lei est. 3.349/2017, regul. Decreto 9.025/2018 — operando (TCA, SEMA/IMAC). Atual.: Lei 4.395/2024 + IN IMAC/SEMA 1/2026 (embargo remoto).",
+  "prada": "Federal (RL 20 anos, 1/10 a cada 2 anos; APP art.61-A) via TCA. Cronograma estadual próprio: não localizado.",
+  "cra_psa": "PSA forte: SISA / ISA Carbono REDD+ (Lei 2.308/2010, IMC) — pioneiro. Mercado de CRA ativo: não localizado.",
+  "oema": "IMAC (licenciador) + SEMA/SEMAPI (CAR/PRA). SICAR federal c/ base estadual.",
+  "obs": "RL base é 80%, NÃO 20% (erro comum). Redução a 50% condicionada.",
+  "cit": "Lei est.AC 3.349/2017; Dec. 9.025/2018; Lei 4.395/2024; IN IMAC/SEMA 1/2026; Lei est. 2.308/2010 (SISA); Lei est. 2.693/2013; Lei 12.651/2012 art.12 I"
+ },
+ {
+  "uf": "AM",
+  "biomas": "Amazônia (~100%; toda na Amazônia Legal)",
+  "rl_regra": "RL 80% (floresta). Redução 80%→50% (Decreto est. 52.216/2025) condicionada (UC/TI thresholds + CEMAAM), só p/ déficit, não p/ floresta preservada.",
+  "pra": "Lei est. 4.406/2016 (atualizou 3.635/2011); SEMA-AM + IPAAM (GCAP). Em implementação operacional.",
+  "prada": "Federal (RL 20 anos, 1/10 a cada 2 anos). Cronograma estadual: não localizado.",
+  "cra_psa": "PSA: Lei est. 4.266/2015 (Sistema + Fundo FEMUCS), em implementação. Mercado de CRA: não localizado.",
+  "oema": "IPAAM (executor) + SEMA-AM. SICAR federal (validação IPAAM).",
+  "obs": "RL referência 80%. Redução recente/condicionada/judicializável.",
+  "cit": "Lei est.AM 4.406/2016 (atualizou 3.635/2011); Dec. 52.216/2025; Lei est. 4.266/2015 (PSA); Lei 12.651/2012 art.12 I"
+ },
+ {
+  "uf": "AP",
+  "biomas": "Amazônia (100% IBGE); savanas amazônicas ('cerrados do AP' ~6,2%), mangue, várzea",
+  "rl_regra": "Amazônia Legal art.12: 80% floresta, 35% savana/cerrado, 20% campos gerais. 'Cerrado do AP' = savana DENTRO da Amazônia (35%), decidir pela tipologia. Reduções via ZEE/Decreto 1665/2021.",
+  "pra": "Decreto est. 1665/2021 (institui PRA + CAR estadual) — operando (SEMA-AP). Inst.: CAR, TC, PRAD/PRADA, CRA.",
+  "prada": "Decreto 1665/2021: APP até 5 anos (1/5/ano); RL+uso restrito até 20 anos (1/10 a cada 2 anos); supressão pós-2008 em até 2 anos.",
+  "cra_psa": "CRA prevista (Decreto 1665/2021 art.73, regra federal). PSA estadual vigente + mercado CRA: não localizado.",
+  "oema": "SEMA-AP (IMAP e IEF EXTINTOS em 2019, Lei 2.426/2019). SICAR federal.",
+  "obs": "IMAP extinto — usar SEMA-AP. Tratar savana como 35%, não 80%.",
+  "cit": "Dec.AP 1665/2021; Lei est. 2.426/2019 (extinção IMAP/IEF); IEPA 2016; Lei 12.651/2012 art.12 I"
+ },
+ {
+  "uf": "PA",
+  "biomas": "Amazônia (100% IBGE); enclaves de savana/transição no sul/sudeste e Marajó",
+  "rl_regra": "Amazônia Legal art.12: 80% floresta, 35% cerrado, 20% campos. Base 80%. Redução 80%→50% via ZEE (Zona Leste/Calha Norte 2010).",
+  "pra": "Decreto est. 1.379/2015 (alt. 1.653/2016, IN SEMAS 01/2020); 'Regulariza Pará' (Decreto 2.745/2022, PEAA). Operando via SIMLAM.",
+  "prada": "PRADA aprovado pela SEMAS (~1,5 mil); cronograma federal (RL 20 anos, 1/10 a cada 2 anos). Cronograma estadual distinto: não localizado.",
+  "cra_psa": "CRA federal aplicável. Instrumento estadual próprio: Cota de Proteção Ambiental (CPA, Decreto 4.613/2025, IDEFLOR-Bio) — R$100/ha/ano regulariza déficit RL consolidado. PSA/REDD+ no PEAA (Lei 9.048/2020).",
+  "oema": "SEMAS-PA. DUAL: cadastro SICAR federal, mas análise/validação/PRA no SIMLAM estadual — status pode divergir.",
+  "obs": "Sistema dual SICAR×SIMLAM (checar na SEMAS). CPA estadual ≠ CRA federal.",
+  "cit": "Dec.PA 1.379/2015 (alt.1.653/2016); IN SEMAS 01/2020; Dec. 2.745/2022; Lei est. 9.048/2020 (PEAA); Dec. 4.613/2025 (CPA); Lei 12.651/2012 art.12 I"
+ },
+ {
+  "uf": "RO",
+  "biomas": "Amazônia (todos municípios IBGE; enclaves de cerrado no sul/Vilhena)",
+  "rl_regra": "Amazônia Legal: 80% floresta. EXCEÇÃO: redução 80%→50% p/ consolidado em zonas consolidadas do ZSEE-RO (LC 233/2000), ouvido CONSEMA, excluídas áreas prioritárias. Cruzar imóvel × zona ZSEE antes de 80% vs 50%.",
+  "pra": "Decreto est. 17.940/2013 → PPRA (LC est. 1.193/2023); Portaria SEDAM 305/2018, IN SEDAM/GAB 9/2025. Operando (COMRAR/SEDAM).",
+  "prada": "PRADA via COMRAR/SEDAM; cronograma federal (RL 20 anos, 1/10 a cada 2 anos). BR-364: recomposição 30 anos via TAC (decreto federal 2006).",
+  "cra_psa": "PSA: Lei est. 4.437/2018 (PGSA/SGSA, REDD+; Floresta+ Amazônia). Mercado de CRA estadual: não localizado.",
+  "oema": "SEDAM. SICAR federal; regularização interna (COMRAR/SEDAM).",
+  "obs": "CAVEAT: RL pode ser 50% em consolidado nas zonas do ZSEE. ZSEE-RO atualizado 2024/2025 — confirmar lei vigente.",
+  "cit": "Dec.RO 17.940/2013; LC est. 1.193/2023 (PPRA); Portaria SEDAM 305/2018; IN SEDAM/GAB 9/2025; LC 233/2000 (ZSEE); Lei est. 4.437/2018 (PSA); Lei 12.651/2012 art.12 I"
+ },
+ {
+  "uf": "RR",
+  "biomas": "Amazônia (IBGE); 'lavrado de Roraima' = grande savana (~42.706 km²) + floresta ombrófila",
+  "rl_regra": "Amazônia Legal: 80% floresta, 35% cerrado, 20% campos gerais. LAVRADO/savana: campos gerais=20%, cerrado=35% — distinção decisiva (grande parte é savana, não floresta). Redução 80%→50% via ZEE (Decreto 33.467-E/2022, contestada).",
+  "pra": "Lei est. 2.068/2024 + LC 374/2026; IN FEMARH/PRES 04/2026 — operando. Instrumentos: CRRA (pré-2008), DRA (pós-2008).",
+  "prada": "IN FEMARH 04/2026: APP até 10 anos (1/5 a cada 2 anos); RL até 20 anos (1/10 a cada 2 anos, até 50% exóticas); uso restrito 20 anos. Via TC com FEMARH.",
+  "cra_psa": "CRA prevista (Lei 2.068/2024). Mercado de CRA + PSA estadual estruturado: não localizado.",
+  "oema": "FEMARH-RR (Lei 815/2011). SICAR federal.",
+  "obs": "REGRA DO LAVRADO: muito de RR é savana → RL 20-35%, não 80%. Enquadrar pela vegetação, não pelo bioma IBGE.",
+  "cit": "Lei est.RR 2.068/2024; LC 374/2026; IN FEMARH/PRES 04/2026; Dec. 33.467-E/2022 (ZEE); Lei est. 815/2011; Lei 12.651/2012 art.12 I"
+ }
+]

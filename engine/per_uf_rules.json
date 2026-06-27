@@ -1,0 +1,303 @@
+{
+ "fonte": "Pesquisa Raio-X CAR 2026 — fontes oficiais (ver 'cit' por UF)",
+ "n_uf": 27,
+ "uf": {
+  "MS": {
+   "uf": "MS",
+   "biomas": "Cerrado (~61%) + Mata Atlântica + Pantanal. FORA da Amazônia Legal.",
+   "rl_regra": "RL 20% p/ todos os biomas (art.12 III). '35% Cerrado' NÃO se aplica. Pantanal: Lei est. 6.160/2023 (conservar 50% florestal/savânica, 40% campestre; RL só pastagem nativa).",
+   "pra": "Decreto est. 13.977/2014 (CAR-MS, PRA, 'MS Mais Sustentável'; IMASUL). TC = título executivo. Compensação RL: Res. Conj. SEMAGRO/SAD 002/2018.",
+   "prada": "PRADA p/ APP/RL/uso restrito (Dec.13.977/2014); cronograma federal (RL 20 anos, 1/10 a cada 2 anos).",
+   "cra_psa": "PSA: 'PSA Bioma Pantanal' (SEMADESC, Fundo Clima Pantanal, Lei 6.160/2023; R$40mi/ano; R$55,47/ha/ano). CRA federal; mercado estadual: não localizado.",
+   "oema": "IMASUL (vinc. SEMADESC). Sistema PRÓPRIO: SIRIEMA + módulo CARMS (Res. SEMAC 11/2014), integrado ao SICAR. NÃO usa SIMCAR (isso é MT).",
+   "obs": "Não confundir com MT: SIMCAR/LC 592/2017 são de Mato Grosso.",
+   "cit": "Dec.MS 13.977/2014; Res.SEMAC 11/2014; Lei est. 6.160/2023; Res.Conj.SEMAGRO/SAD 002/2018; Lei 12.651/2012 art.12 III"
+  },
+  "DF": {
+   "uf": "DF",
+   "biomas": "100% Cerrado. Fora da Amazônia Legal.",
+   "rl_regra": "RL 20% (art.12 III, Cerrado fora da Amaz. Legal).",
+   "pra": "Decreto Distrital 37.931/2016 (CAR e PRA; IBRAM). Adesão via TCRA (título executivo). IN IBRAM 33/2020.",
+   "prada": "Dec.37.931/2016: recomposição inicia na estação chuvosa seguinte ao TCRA, até 20 anos. >20 ha ou erosão média/avançada → PRADA por habilitado.",
+   "cra_psa": "PSA: Lei Distrital 5.955/2017 (PDPSA; custeio Res. ADASA 04/2021). Produtor de Água Pipiripau (desde 2011). CRA federal.",
+   "oema": "IBRAM (Brasília Ambiental) + SEMA-DF (política). CAR via SICAR federal; PRA por regramento distrital.",
+   "obs": "Nº correto Decreto 37.931/2016 (não 37.391).",
+   "cit": "Dec.DF 37.931/2016; IN IBRAM 33/2020; Lei Distrital 5.955/2017; Res.ADASA 04/2021; Lei 12.651/2012 art.12 III"
+  },
+  "MG": {
+   "uf": "MG",
+   "biomas": "Cerrado (predom.) + Mata Atlântica + Caatinga (norte). FORA da Amazônia Legal.",
+   "rl_regra": "RL 20% (Lei est. 20.922/2013 art.24, alinhada à 12.651/2012). Vedado corte raso na RL salvo manejo.",
+   "pra": "Lei est. 20.922/2013 + Decreto est. 48.127/2021. Análise CAR: Res. Conj. SEMAD/IEF 3.132/2022. Ativo.",
+   "prada": "PRADA (Dec.48.127/2021 + Dec.47.749/2019; Mata Atlântica = compensação em dobro). Cronograma federal (~20 anos, 1/10 a cada 2 anos).",
+   "cra_psa": "CRA reconhecida (Lei 20.922/2013, sucessora da CRF). PSA: 'Bolsa Verde' Lei est. 17.727/2008 + Dec. 45.113/2009 (IEF; >2.700 benef., ~91,5 mil ha).",
+   "oema": "SEMAD + IEF (executor), no SISEMA. Módulo SICAR-MG integrado ao federal; geoportal SISEMA-IDE.",
+   "obs": "Cronograma PRADA estadual unificado: não localizado.",
+   "cit": "Lei est.MG 20.922/2013; Dec. 48.127/2021; Dec. 47.749/2019; Res.Conj.SEMAD/IEF 3.132/2022; Lei 17.727/2008; Dec. 45.113/2009"
+  },
+  "SP": {
+   "uf": "SP",
+   "biomas": "Mata Atlântica (predom.) + Cerrado. Fora da Amazônia Legal.",
+   "rl_regra": "RL 20% (art.12 II) p/ Mata Atlântica e Cerrado. Compensação só no mesmo bioma; 'Zona de Tensão Ecológica' extinta (Res. SAA 55/2024).",
+   "pra": "SICAR-SP: Dec. 59.261/2013; PRA: Dec. 61.792/2016 consolidado pelo Dec. 64.842/2020 (alt. 65.182/2020). Adesão: CAR + adesão + PRADA + TC.",
+   "prada": "Res. Conj. SAA-SIMA 03/2020: implantação em até 10 anos (mais restrito que 20 do federal); espécies nativas de SP; homologação ≤12 meses.",
+   "cra_psa": "PSA: Lei est. 13.798/2009 → 'REFLORESTA-SP' (Dec. 66.550/2022) + nova PSA (Dec. 66.549/2022) + Programa Nascentes. CRA federal; mercado estadual: não localizado.",
+   "oema": "SEMIL (ex-SMA/SIMA); gestão do CAR na Secr. Agricultura (SAA) desde 2021. SICAR-SP no SIGAM + GEO-CAR/DataGeo, integrado ao SICAR.",
+   "obs": "PRADA SP cap 10 anos (atenção: mais curto que federal). 'PRADESP' e mercado CRA: não localizados.",
+   "cit": "Dec.SP 59.261/2013; 61.792/2016; 64.842/2020; 65.182/2020; Res.Conj.SAA-SIMA 03/2020; Res.SAA 55/2024; Lei 13.798/2009; Dec. 66.549/2022; 66.550/2022"
+  },
+  "RJ": {
+   "uf": "RJ",
+   "biomas": "100% Mata Atlântica. Cobertura nativa ~30%.",
+   "rl_regra": "RL 20% (art.12, fora da Amaz. Legal); todo o estado Mata Atlântica.",
+   "pra": "Decreto est. 44.512/2013 (CAR, PRA, RL, CRA, CRF; INEA). Compl.: Dec. 46.890/2019. Adesão via TC com INEA.",
+   "prada": "Regularização APP/RL/uso restrito via TC (Dec.44.512/2013 art.19); prazo federal (até 20 anos, 1/10 a cada 2 anos).",
+   "cra_psa": "CRA emitida pelo INEA (Dec.44.512/2013 arts.27-40; validade 5/10/15/20 anos). PSA: PRO-PSA Dec. 42.029/2011 (INEA) + CERHI-RJ 227/2020 e 251/2021. (Lei est. 6.572/2013 NÃO confirmada.)",
+   "oema": "INEA (vinc. SEAS). CAR-RJ próprio (2013) hoje integrado ao SICAR federal.",
+   "obs": "Lei est. PSA 6.572/2013 não confirmada; instrumento verificado = Dec. 42.029/2011.",
+   "cit": "Dec.RJ 44.512/2013; Dec. 46.890/2019; Dec. 42.029/2011; Res.CERHI-RJ 227/2020, 251/2021; Lei Fed. 14.119/2021"
+  },
+  "ES": {
+   "uf": "ES",
+   "biomas": "100% Mata Atlântica.",
+   "rl_regra": "RL 20% (art.12 II); todo o ES Mata Atlântica.",
+   "pra": "Decreto est. 3.346-R/2013 + IN Idaf 011/2023 (executor IDAF). SICAR federal (adesão IN Idaf 005/2013; autenticação SIMLAM/SISLAM).",
+   "prada": "Recomposição APP/RL via TC; até 20 anos, mín. 1/10 a cada 2 anos (IN Idaf 011/2023 + 12.651/2012).",
+   "cra_psa": "PSA pioneiro: 1ª lei do país — Lei est. 8.995/2008, reformulada pela Lei est. 9.864/2012; Programa Reflorestar (SEAMA/IEMA/BANDES) + ProdutorES de Água. CRA federal; mercado estadual: não localizado.",
+   "oema": "IDAF (CAR/PRA) + IEMA (licenc./rec. hídricos) + SEAMA (PSA/Reflorestar). SICAR federal integrado ao SIMLAM/SISLAM.",
+   "obs": "ES = 1º estado com lei de PSA (2008).",
+   "cit": "Dec.ES 3.346-R/2013; IN Idaf 011/2023; IN Idaf 005/2013; Lei est. 9.864/2012 (rev. 8.995/2008); Dec. Fed. 9.640/2018"
+  },
+  "MA": {
+   "uf": "MA",
+   "biomas": "Amazônia (oeste), Cerrado (centro-sul, predom.), Caatinga (leste). Oeste do 44ºW = Amazônia Legal.",
+   "rl_regra": "Depende de bioma × Amazônia Legal: oeste do 44ºW = 80% floresta/35% cerrado/20% campos; leste (fora da Amaz. Legal) = 20%.",
+   "pra": "Decreto est. 38.566/2023 (regul. Cap. XIII Lei 12.651/12); Portaria SEMA 380/2023. Operando via SICAR.",
+   "prada": "Dec. 38.566/2023: APP até 15 anos (1/15/ano); RL até 20 anos (1/10 a cada 2 anos); início ≤12 meses.",
+   "cra_psa": "CRA federal (sem mercado estadual). PSA/REDD+: Lei est. 11.578/2021 + Decreto 37.969/2022 (Sistema Jurisdicional REDD+).",
+   "oema": "SEMA-MA. Usa SICAR nacional (módulo análise SFB); SEMA valida por portaria.",
+   "obs": "Tríplice bioma + fronteira Amaz. Legal (44ºW): RL depende de localização e fitofisionomia.",
+   "cit": "Dec.MA 38.566/2023; Portaria SEMA 380/2023; Lei est. 11.578/2021; Dec. 37.969/2022; Lei 12.651/2012 art.3 I,12"
+  },
+  "TO": {
+   "uf": "TO",
+   "biomas": "Cerrado (~91%) + Amazônia (~9%). Estado INTEIRO na Amazônia Legal.",
+   "rl_regra": "Amazônia Legal (todo TO): 80% floresta/35% cerrado/20% campos. Maioria Cerrado → RL 35% (não 20%).",
+   "pra": "Decreto est. 6.888/2025 (regul. CAR e PRA). Operando; adesão por Termo de Compromisso.",
+   "prada": "Dec. 6.888/2025: recomposição APP/RL no TC; cronograma estadual não localizado → federal (RL 20 anos, 1/10 a cada 2 anos).",
+   "cra_psa": "PSA: Lei est. 4.111/2023 (PEPSA, SEMARH) + Lei 4.131/2023 (FunClima). REDD+ jurisdicional (ART TREES, venda Mercuria 2023). CRA segue federal.",
+   "oema": "NATURATINS (executor CAR/PRA) + SEMARH (políticas). SIGCAR-TO (gestão estadual integrada ao SICAR).",
+   "obs": "Todo o estado na Amazônia Legal → RL de Cerrado é 35%, NÃO 20%. Marco PRA muito recente (2025).",
+   "cit": "Dec.TO 6.888/2025; Lei est. 4.111/2023; Lei 4.131/2023; LC 124/2007; Lei 12.651/2012 art.12 I"
+  },
+  "PI": {
+   "uf": "PI",
+   "biomas": "Caatinga (predom.) + Cerrado (sul/MATOPIBA) + Mata dos Cocais (ecótono). FORA da Amazônia Legal.",
+   "rl_regra": "20% para todos (art.12 II, 'demais regiões'), qualquer bioma. Nenhuma norma estadual altera.",
+   "pra": "Lei est. 6.132/2011 (institui PRA + CAR estadual; TCA; adesão 3 anos). INs SEMAR/SEMARH (03/2022, 16/2023, 020/2024). Decreto regulamentador: não localizado.",
+   "prada": "PRAD ≤180 dias após TCA. Prazo de recomposição estadual não localizado → federal (RL 20 anos, 1/10 a cada 2 anos).",
+   "cra_psa": "CRA federal (compensação via área equiv./servidão/UC/FEUC; IN SEMARH 020/2024; Lei 8.267/2023). Lei estadual de PSA: não localizada (rege Lei Fed. 14.119/2021).",
+   "oema": "SEMARH-PI (ex-SEMAR). SICAR nacional + plataforma estadual SIGA.",
+   "obs": "Fora da Amazônia Legal → RL 20% uniforme. Marco = Lei 6.132/2011 (pré-Código). Decreto regulamentador, PSA e mercado CRA: não localizados.",
+   "cit": "Lei est.PI 6.132/2011; IN SEMARH 020/2024; Lei 8.267/2023; Lei 12.651/2012 art.12 II"
+  },
+  "BA": {
+   "uf": "BA",
+   "biomas": "Caatinga (~54%) + Cerrado (~27%, Oeste/MATOPIBA) + Mata Atlântica (~19%). FORA da Amazônia Legal.",
+   "rl_regra": "20% (art.12, fora da Amaz. Legal) p/ os três biomas. Mata Atlântica soma restrições da Lei 11.428/2006 + Dec. 6.660/2008.",
+   "pra": "Decreto est. 15.180/2014 (gestão florestal, CEFIR e PRA). Base: Lei 10.431/2006 + Lei 12.377/2011 (cria INEMA). Operando; adesão via CEFIR.",
+   "prada": "Dec. 15.180/2014: PRAD (passivos) + recomposição APP/RL; RL até 20 anos, 1/10 a cada 2 anos. Projeto técnico georref. no CEFIR.",
+   "cra_psa": "CRA federal. PSA: PEPSA Lei est. 13.223/2015 (Carbono/Hídricos/Biodiv.; SEMA-BA). Possível nova lei (15.173/2026) não confirmada.",
+   "oema": "SEMA-BA (política) + INEMA (executor, Lei 12.377/2011). Cadastro PRÓPRIO: CEFIR (via SEIA) — cumpre função do CAR + licenciamento + outorga.",
+   "obs": "Cadastro estadual próprio (CEFIR) paralelo ao SICAR. Reverificar nova lei de PSA + portarias INEMA do PRA.",
+   "cit": "Dec.BA 15.180/2014; Lei est. 10.431/2006; Lei 12.377/2011; Lei est. 13.223/2015; Lei Fed. 11.428/2006; Dec. 6.660/2008"
+  },
+  "GO": {
+   "uf": "GO",
+   "biomas": "Cerrado (~97%) + pequena Mata Atlântica (sudeste). INTEGRALMENTE FORA da Amazônia Legal (LC 124/2007).",
+   "rl_regra": "20% (art.12 II) em todo o território (Cerrado e Mata Atlântica). Não se aplica 80/35.",
+   "pra": "Decreto est. 10.470/2024 (regul. PRA; data a confirmar no DOE). Base: Lei est. 18.104/2013 + Lei 21.231/2022. Gestão GERAM/DAI. Operando.",
+   "prada": "PRADA federal (art.17 + Dec.7.830/2012) anexo ao TC; RL 20 anos, 1/10 a cada 2 anos. Compensação/dano: Dec. est. 10.899/2026. Prazos estaduais: não localizados.",
+   "cra_psa": "CRA federal. PSA: programa 'Cerrado em Pé' (SEMAD-GO, 2025; FEMA) R$664/ha (nascente) e R$498/ha. Nº lei/decreto: não localizado.",
+   "oema": "SEMAD-GO. Sistema PRÓPRIO: SIGCAR (oficial 29/10/2025; saída do SICAR nacional ~ago-nov/2025; recibo estadual probatório).",
+   "obs": "GO saiu do SICAR nacional → SIGCAR próprio. Confirmar no DOE: data Dec.10.470/2024 + nº 'Cerrado em Pé'.",
+   "cit": "Dec.GO 10.470/2024; Lei est. 18.104/2013; Lei 21.231/2022; Dec. 10.899/2026; LC Fed. 124/2007; Lei 12.651/2012 art.12 II"
+  },
+  "MT": {
+   "uf": "MT",
+   "biomas": "Amazônia (~53%) + Cerrado (~40%) + Pantanal (~7%). INTEIRO na Amazônia Legal (LC 124/2007).",
+   "rl_regra": "Amazônia Legal art.12 I por fitofisionomia: 80% floresta/35% cerrado/20% campos (Pantanal). Cálculo proporcional no mesmo imóvel. Redução por ZEE NÃO operacionalizada.",
+   "pra": "LC est. 592/2017 (PRA + CAR, cria SIMCAR), regul. Decreto est. 1.031/2017 (antec. 420/2016). Em plena operação (dos mais avançados). TC suspende sanções pré-22/07/2008.",
+   "prada": "PRADA via LC 592/2017 + Decreto est. 1.253/2017 (no SIMCAR). RL até 20 anos (1/10 a cada 2 anos); APP até 10 anos. TC = título executivo. +1.000 projetos (~50 mil ha).",
+   "cra_psa": "CRA federal (compensação no MESMO bioma, STF 2024); MT grande polo, operada no SIMCAR. PSA/REDD+: Lei est. 9.878/2013 (SISREDD+) + PCI + REM-MT. (Lei 5.235/2018 é de MS, não MT.)",
+   "oema": "SEMA-MT. Sistema PRÓPRIO: SIMCAR (LC 592/2017, Dec.1.031/2017; recibo SIMCAR). Licenciamento: SIMLAM. Produtor faz CAR no SIMCAR.",
+   "obs": "Regra trifásica 80/35/20 por fitofisionomia = principal complexidade. PL de reclassificação vetado jan/2025 → manter 80/35/20.",
+   "cit": "LC est.MT 592/2017; Dec. 1.031/2017; Dec. 1.253/2017; Lei est. 9.878/2013; LC Fed. 124/2007; Lei 12.651/2012 art.12 I"
+  },
+  "AL": {
+   "uf": "AL",
+   "biomas": "Mata Atlântica (predom.) + Caatinga (sertão/agreste). Fora da Amaz. Legal.",
+   "rl_regra": "RL 20% (art.12 II) p/ Mata Atlântica e Caatinga.",
+   "pra": "IN IMA/AL 02/2023 (art.25). Sem decreto estadual de PRA (base Dec. Fed. 7.830/2012 e 8.235/2014).",
+   "prada": "PRADA (IN 02/2023 art.29); ≤4 MF = PRADA Simplificado. TC após aprovação; adesão até 1 ano após prazo do CAR.",
+   "cra_psa": "PSA: PEPSA/PROPSA (Dec. est. 93.740/2023, regul. Lei Fed. 14.119/2021; IMA+SEMARH). CRA federal.",
+   "oema": "IMA/AL (vinc. SEMARH). SICAR federal.",
+   "obs": "PRA criado por IN do IMA, não por decreto. Lei 9.312/2024 não altera RL.",
+   "cit": "IN IMA/AL 02/2023; Dec. est. 93.740/2023; Dec. Fed. 7.830/2012, 8.235/2014; Lei 12.651/2012 art.12 II"
+  },
+  "CE": {
+   "uf": "CE",
+   "biomas": "Caatinga (100% inserido) + Mata Atlântica (enclaves serranos/litoral).",
+   "rl_regra": "RL 20% (art.12 II) p/ Caatinga e Mata Atlântica.",
+   "pra": "PRACE: Decreto est. 33.860/2020 (base art.59 da 12.651/2012); COMPRACE; IN SEMACE 1/2020. Ativo.",
+   "prada": "PRAD/PRADA à SEMACE após adesão + TC; TR SEMACE (2021, 2024) + PRAD Simplificado; prazo federal (até 20 anos, 1/10 a cada 2 anos).",
+   "cra_psa": "PSA: Lei est. 18.427/2023 (SEMA-CE). CRA federal.",
+   "oema": "SEMACE (vinc. SEMA). SICAR federal; PRA estadual (PRACE).",
+   "obs": "~387.770 imóveis no CAR (apoio Fundo Amazônia).",
+   "cit": "Dec.CE 33.860/2020; IN SEMACE 1/2020; Lei est. 18.427/2023; Lei 12.651/2012 art.12 II"
+  },
+  "PB": {
+   "uf": "PB",
+   "biomas": "Caatinga (~92%) + Mata Atlântica (litoral).",
+   "rl_regra": "RL 20% (art.12 II) p/ ambos os biomas.",
+   "pra": "não localizado — sem decreto/lei estadual de PRA; SUDEMA opera via TC sobre marco federal (12.651/2012, Dec. 7.830/2012); ato normativo em elaboração.",
+   "prada": "Sem cronograma estadual (não localizado) → federal (até 20 anos, 1/10 a cada 2 anos; Dec. 8.235/2014).",
+   "cra_psa": "PSA: Lei est. 10.165/2013 (Política + Fundo), sem programa operacional. CRA: não localizado.",
+   "oema": "SUDEMA (autarquia). SICAR federal.",
+   "obs": "Atrasado na base legal. Dec. est. 44.889/2024 trata de infrações, não é o PRA. (Lei PB 10.165/2013 ≠ Lei Fed. 10.165/2000.)",
+   "cit": "Lei est.PB 10.165/2013; Dec. Fed. 7.830/2012, 8.235/2014; Lei 12.651/2012 art.12 II"
+  },
+  "PE": {
+   "uf": "PE",
+   "biomas": "Caatinga (Agreste/Sertão) + Mata Atlântica (Zona da Mata/brejos).",
+   "rl_regra": "RL 20% (art.12 II) p/ ambos; compensação no mesmo bioma.",
+   "pra": "Decreto est. 44.535/2017 (CAR + PRA/PE); IN CPRH 004/2017. Ativo; adesão via TC com CPRH.",
+   "prada": "PRADA (Dec.44.535/2017 + IN CPRH 04/2017): APP e uso restrito até 7 anos (mín.15%/ano); RL até 20 anos (1/10 a cada 2 anos); relatório anual.",
+   "cra_psa": "PSA: Lei est. 15.809/2016 (Política+Programa+Fundo; SEMAS; ex. Produtor de Águas do Bitury). CRA federal.",
+   "oema": "CPRH (vinc. SEMAS). SICAR federal; homologação/PRA pela CPRH.",
+   "obs": "IN CPRH 2/2026 adaptou nova Lei de Licenciamento (não altera RL).",
+   "cit": "Dec.PE 44.535/2017; IN CPRH 004/2017; Lei est. 15.809/2016; Lei 12.651/2012 art.12 II"
+  },
+  "RN": {
+   "uf": "RN",
+   "biomas": "Caatinga (predom.) + Mata Atlântica (litoral leste).",
+   "rl_regra": "RL 20% (art.12 II) p/ ambos.",
+   "pra": "não localizado — sem decreto/lei estadual de PRA (apontado por CPI/Observatório). Aplica-se marco federal (Dec. 7.830/2012, 8.235/2014).",
+   "prada": "Sem norma estadual (não localizado) → federal (RL até 20 anos, 1/10 a cada 2 anos; art.66). Submissão via SICAR/IDEMA.",
+   "cra_psa": "Sem CRA/PSA estadual (não localizado); aplica-se Lei Fed. 14.119/2021. 'RN Mais Verde' (Lei 12.411/2025) trata de UCs, não RL privada.",
+   "oema": "IDEMA. SICAR federal; licenciamento SEIA-RN.",
+   "obs": "Entre os mais atrasados no Código Florestal. Decs. 35.298–35.301/2026 não instituem PRA/CRA/PSA.",
+   "cit": "Dec. Fed. 7.830/2012, 8.235/2014; Lei Fed. 14.119/2021; Lei 12.651/2012 art.12 II,66"
+  },
+  "SE": {
+   "uf": "SE",
+   "biomas": "Mata Atlântica (litoral, predom.) + Caatinga (sertão); manguezais/restingas.",
+   "rl_regra": "RL 20% (art.12) p/ ambos.",
+   "pra": "não localizado — sem decreto geral de PRA; ADEMA opera via Cap. XIII da 12.651/2012 + Dec. 8.235/2014 (TC, até 20 anos). PRA setorial só na Lei est. 8.327/2017 (carcinicultura).",
+   "prada": "PRADA/PRAD como condição do TC com a ADEMA, padrão federal (Dec. 8.235/2014; IN MMA 2/2014). Sem formulário estadual (não localizado).",
+   "cra_psa": "não localizado — sem PSA/CRA estadual; PSA sob Lei Fed. 14.119/2021.",
+   "oema": "ADEMA (Lei est. 2.181/1978, vinc. SEMARH). SICAR federal.",
+   "obs": "Último a iniciar o CAR; entre os mais atrasados no PRA. ~112 mil imóveis.",
+   "cit": "Cap.XIII Lei 12.651/2012; Dec. Fed. 8.235/2014; IN MMA 2/2014; Lei est. SE 8.327/2017; Lei Fed. 14.119/2021"
+  },
+  "PR": {
+   "uf": "PR",
+   "biomas": "Mata Atlântica (~98%) + enclaves de Cerrado (Campos Gerais).",
+   "rl_regra": "RL 20% (art.12) — Mata Atlântica e enclaves de Cerrado.",
+   "pra": "Lei est. 18.295/2014 (institui PRA) + Decreto est. 11.515/2018. Ativo.",
+   "prada": "PRADA no PRA: após análise do IAT habilita aba 'Regularização Ambiental' no SICAR-PR + TC com cronograma; compensação RL via IN IAT 53/2025.",
+   "cra_psa": "PSA: Lei est. 17.134/2012 (Bioclima Paraná) + Dec. 1.591/2015; PSA Hídrico (IAT). CRA/compensação por IN IAT 53/2025.",
+   "oema": "IAT (ex-IAP). Sistema PRÓPRIO: SICAR-PR (car.iat.pr.gov.br) sincronizado ao federal.",
+   "obs": "SIGARH = outorga hídrica, NÃO é o CAR. CAR/PRA no SICAR-PR.",
+   "cit": "Lei est.PR 18.295/2014; Dec. 11.515/2018; Lei est. 17.134/2012; Dec. 1.591/2015; IN IAT 53/2025"
+  },
+  "RS": {
+   "uf": "RS",
+   "biomas": "Mata Atlântica (norte/leste) + Pampa (~63%, sul).",
+   "rl_regra": "RL 20% (art.12) — Mata Atlântica e Pampa.",
+   "pra": "Decreto est. 58.804/2026 (28/05/2026) instituiu/regulamentou o PRA-RS (estado historicamente atrasado). Ativo (novo).",
+   "prada": "PRADA integrado ao CAR; passivos APP/RL via TC; regras em INs conjuntas SEMA/FEPAM.",
+   "cra_psa": "PSA: PEPSA Lei est. 15.434/2020 (Código Estadual) + Dec. 56.640/2022 (atual. 57.065/2023); CEPSA (portal ProClima2050).",
+   "oema": "SEMA-RS + FEPAM. CAR migrou do SICAR-RS próprio para a plataforma FEDERAL em 23/08/2024.",
+   "obs": "SOL = licenciamento, NÃO é o CAR. Dec. 58.804/2026 confirmado via releases SEMA-RS (recente).",
+   "cit": "Dec.RS 58.804/2026; Lei est. 15.434/2020; Dec. 56.640/2022; 57.065/2023; Lei 12.651/2012 art.12"
+  },
+  "SC": {
+   "uf": "SC",
+   "biomas": "~100% Mata Atlântica.",
+   "rl_regra": "RL 20% (art.12 II), bioma Mata Atlântica.",
+   "pra": "Lei est. 14.675/2009 (Código Estadual) + Dec. 2.219/2014 (CAR) + Decreto est. 402/2015 (PRA). Ativo (adesão >4 MF até 31/12/2023; <4 MF até 31/12/2025).",
+   "prada": "Adesão condicionada ao CAR; TC c/ APP/RL/uso restrito; suspende autuação pré-22/07/2008; análise com Secr. Agricultura.",
+   "cra_psa": "PSA: Lei est. 15.133/2010 (PEPSA; alt. 16.290/2013, 18.717/2023; subprogramas UCs/Vegetação/Água). CRA prevista em acordo IMA/Agricultura.",
+   "oema": "IMA-SC (ex-FATMA). Plataforma PRÓPRIA de CAR (car.sc.gov.br; base PRA por EPAGRI/CIRAM) — NÃO no SICAR federal.",
+   "obs": "SC roda CAR/PRA em sistema próprio (car.sc.gov.br).",
+   "cit": "Lei est.SC 14.675/2009; Dec. 2.219/2014; Dec. 402/2015; Lei est. 15.133/2010; Lei 12.651/2012 art.12 II"
+  },
+  "AC": {
+   "uf": "AC",
+   "biomas": "Amazônia (100%; toda na Amazônia Legal)",
+   "rl_regra": "RL 80% (floresta, Amazônia Legal, art.12 I). Redução a até 50% via ZEE (Lei est. 1.904/2007) só p/ consolidado pré-22/07/2008, não automática.",
+   "pra": "Lei est. 3.349/2017, regul. Decreto 9.025/2018 — operando (TCA, SEMA/IMAC). Atual.: Lei 4.395/2024 + IN IMAC/SEMA 1/2026 (embargo remoto).",
+   "prada": "Federal (RL 20 anos, 1/10 a cada 2 anos; APP art.61-A) via TCA. Cronograma estadual próprio: não localizado.",
+   "cra_psa": "PSA forte: SISA / ISA Carbono REDD+ (Lei 2.308/2010, IMC) — pioneiro. Mercado de CRA ativo: não localizado.",
+   "oema": "IMAC (licenciador) + SEMA/SEMAPI (CAR/PRA). SICAR federal c/ base estadual.",
+   "obs": "RL base é 80%, NÃO 20% (erro comum). Redução a 50% condicionada.",
+   "cit": "Lei est.AC 3.349/2017; Dec. 9.025/2018; Lei 4.395/2024; IN IMAC/SEMA 1/2026; Lei est. 2.308/2010 (SISA); Lei est. 2.693/2013; Lei 12.651/2012 art.12 I"
+  },
+  "AM": {
+   "uf": "AM",
+   "biomas": "Amazônia (~100%; toda na Amazônia Legal)",
+   "rl_regra": "RL 80% (floresta). Redução 80%→50% (Decreto est. 52.216/2025) condicionada (UC/TI thresholds + CEMAAM), só p/ déficit, não p/ floresta preservada.",
+   "pra": "Lei est. 4.406/2016 (atualizou 3.635/2011); SEMA-AM + IPAAM (GCAP). Em implementação operacional.",
+   "prada": "Federal (RL 20 anos, 1/10 a cada 2 anos). Cronograma estadual: não localizado.",
+   "cra_psa": "PSA: Lei est. 4.266/2015 (Sistema + Fundo FEMUCS), em implementação. Mercado de CRA: não localizado.",
+   "oema": "IPAAM (executor) + SEMA-AM. SICAR federal (validação IPAAM).",
+   "obs": "RL referência 80%. Redução recente/condicionada/judicializável.",
+   "cit": "Lei est.AM 4.406/2016 (atualizou 3.635/2011); Dec. 52.216/2025; Lei est. 4.266/2015 (PSA); Lei 12.651/2012 art.12 I"
+  },
+  "AP": {
+   "uf": "AP",
+   "biomas": "Amazônia (100% IBGE); savanas amazônicas ('cerrados do AP' ~6,2%), mangue, várzea",
+   "rl_regra": "Amazônia Legal art.12: 80% floresta, 35% savana/cerrado, 20% campos gerais. 'Cerrado do AP' = savana DENTRO da Amazônia (35%), decidir pela tipologia. Reduções via ZEE/Decreto 1665/2021.",
+   "pra": "Decreto est. 1665/2021 (institui PRA + CAR estadual) — operando (SEMA-AP). Inst.: CAR, TC, PRAD/PRADA, CRA.",
+   "prada": "Decreto 1665/2021: APP até 5 anos (1/5/ano); RL+uso restrito até 20 anos (1/10 a cada 2 anos); supressão pós-2008 em até 2 anos.",
+   "cra_psa": "CRA prevista (Decreto 1665/2021 art.73, regra federal). PSA estadual vigente + mercado CRA: não localizado.",
+   "oema": "SEMA-AP (IMAP e IEF EXTINTOS em 2019, Lei 2.426/2019). SICAR federal.",
+   "obs": "IMAP extinto — usar SEMA-AP. Tratar savana como 35%, não 80%.",
+   "cit": "Dec.AP 1665/2021; Lei est. 2.426/2019 (extinção IMAP/IEF); IEPA 2016; Lei 12.651/2012 art.12 I"
+  },
+  "PA": {
+   "uf": "PA",
+   "biomas": "Amazônia (100% IBGE); enclaves de savana/transição no sul/sudeste e Marajó",
+   "rl_regra": "Amazônia Legal art.12: 80% floresta, 35% cerrado, 20% campos. Base 80%. Redução 80%→50% via ZEE (Zona Leste/Calha Norte 2010).",
+   "pra": "Decreto est. 1.379/2015 (alt. 1.653/2016, IN SEMAS 01/2020); 'Regulariza Pará' (Decreto 2.745/2022, PEAA). Operando via SIMLAM.",
+   "prada": "PRADA aprovado pela SEMAS (~1,5 mil); cronograma federal (RL 20 anos, 1/10 a cada 2 anos). Cronograma estadual distinto: não localizado.",
+   "cra_psa": "CRA federal aplicável. Instrumento estadual próprio: Cota de Proteção Ambiental (CPA, Decreto 4.613/2025, IDEFLOR-Bio) — R$100/ha/ano regulariza déficit RL consolidado. PSA/REDD+ no PEAA (Lei 9.048/2020).",
+   "oema": "SEMAS-PA. DUAL: cadastro SICAR federal, mas análise/validação/PRA no SIMLAM estadual — status pode divergir.",
+   "obs": "Sistema dual SICAR×SIMLAM (checar na SEMAS). CPA estadual ≠ CRA federal.",
+   "cit": "Dec.PA 1.379/2015 (alt.1.653/2016); IN SEMAS 01/2020; Dec. 2.745/2022; Lei est. 9.048/2020 (PEAA); Dec. 4.613/2025 (CPA); Lei 12.651/2012 art.12 I"
+  },
+  "RO": {
+   "uf": "RO",
+   "biomas": "Amazônia (todos municípios IBGE; enclaves de cerrado no sul/Vilhena)",
+   "rl_regra": "Amazônia Legal: 80% floresta. EXCEÇÃO: redução 80%→50% p/ consolidado em zonas consolidadas do ZSEE-RO (LC 233/2000), ouvido CONSEMA, excluídas áreas prioritárias. Cruzar imóvel × zona ZSEE antes de 80% vs 50%.",
+   "pra": "Decreto est. 17.940/2013 → PPRA (LC est. 1.193/2023); Portaria SEDAM 305/2018, IN SEDAM/GAB 9/2025. Operando (COMRAR/SEDAM).",
+   "prada": "PRADA via COMRAR/SEDAM; cronograma federal (RL 20 anos, 1/10 a cada 2 anos). BR-364: recomposição 30 anos via TAC (decreto federal 2006).",
+   "cra_psa": "PSA: Lei est. 4.437/2018 (PGSA/SGSA, REDD+; Floresta+ Amazônia). Mercado de CRA estadual: não localizado.",
+   "oema": "SEDAM. SICAR federal; regularização interna (COMRAR/SEDAM).",
+   "obs": "CAVEAT: RL pode ser 50% em consolidado nas zonas do ZSEE. ZSEE-RO atualizado 2024/2025 — confirmar lei vigente.",
+   "cit": "Dec.RO 17.940/2013; LC est. 1.193/2023 (PPRA); Portaria SEDAM 305/2018; IN SEDAM/GAB 9/2025; LC 233/2000 (ZSEE); Lei est. 4.437/2018 (PSA); Lei 12.651/2012 art.12 I"
+  },
+  "RR": {
+   "uf": "RR",
+   "biomas": "Amazônia (IBGE); 'lavrado de Roraima' = grande savana (~42.706 km²) + floresta ombrófila",
+   "rl_regra": "Amazônia Legal: 80% floresta, 35% cerrado, 20% campos gerais. LAVRADO/savana: campos gerais=20%, cerrado=35% — distinção decisiva (grande parte é savana, não floresta). Redução 80%→50% via ZEE (Decreto 33.467-E/2022, contestada).",
+   "pra": "Lei est. 2.068/2024 + LC 374/2026; IN FEMARH/PRES 04/2026 — operando. Instrumentos: CRRA (pré-2008), DRA (pós-2008).",
+   "prada": "IN FEMARH 04/2026: APP até 10 anos (1/5 a cada 2 anos); RL até 20 anos (1/10 a cada 2 anos, até 50% exóticas); uso restrito 20 anos. Via TC com FEMARH.",
+   "cra_psa": "CRA prevista (Lei 2.068/2024). Mercado de CRA + PSA estadual estruturado: não localizado.",
+   "oema": "FEMARH-RR (Lei 815/2011). SICAR federal.",
+   "obs": "REGRA DO LAVRADO: muito de RR é savana → RL 20-35%, não 80%. Enquadrar pela vegetação, não pelo bioma IBGE.",
+   "cit": "Lei est.RR 2.068/2024; LC 374/2026; IN FEMARH/PRES 04/2026; Dec. 33.467-E/2022 (ZEE); Lei est. 815/2011; Lei 12.651/2012 art.12 I"
+  }
+ }
+}
