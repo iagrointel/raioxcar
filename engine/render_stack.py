@@ -66,10 +66,30 @@ def _mapbiomas(grid, year=2023):
         rgba[:, :, 3][m] = 235
     return rgba
 
+MB_YEAR = 2023  # MapBiomas Coleção 9 (último ano disponível)
+
+def _peri_overlay(grid, g):
+    """Perímetro do imóvel como contorno amarelo (RGBA) — para marcar a propriedade em toda base."""
+    return _rasterize([mapping(g)], grid, (0, 0, 0, 0), outline_rgba=(255, 224, 0, 255), lw=4)
+
+def _with_peri(img, peri):
+    """Composita o contorno do imóvel sobre uma base (float HxWx3 0–1 ou uint8 HxWx4)."""
+    a = np.asarray(img)
+    if a.dtype != np.uint8:
+        a = (np.clip(a, 0, 1) * 255).astype("uint8")
+    if a.shape[2] == 3:
+        a = np.dstack([a, np.full(a.shape[:2], 255, "uint8")])
+    else:
+        a = a.copy()
+    m = peri[:, :, 3] > 0
+    for c in range(4): a[:, :, c][m] = peri[:, :, c][m]
+    return a
+
 def render_stack(cod: str, dsn: str) -> dict:
     g = C._geom(cod, dsn); grid = C._target_grid(g)
     d = CACHE / cod / "stack"; d.mkdir(parents=True, exist_ok=True)
     W, H = grid["W"], grid["H"]; layers = {}
+    peri = _peri_overlay(grid, g)   # contorno do imóvel para todas as bases
     # --- bases ---
     recent_date = None
     try:
@@ -79,22 +99,28 @@ def render_stack(cod: str, dsn: str) -> dict:
         except Exception:
             from datetime import datetime as _dt
             rgb, vf, n, recent_date = C._composite_s2(grid, "2024-06-01/%s" % _dt.now().strftime("%Y-%m-%d"))
-        plt.imsave(d / "rgb_recente.png", C._punch(C._stretch_fixed(rgb, "s2")))
+        plt.imsave(d / "rgb_recente.png", _with_peri(C._punch(C._stretch_fixed(rgb, "s2")), peri))
         layers["rgb_recente"] = {"label": "RGB recente (Sentinel-2)", "base": True, "date": recent_date}
     except Exception as e: layers["rgb_recente"] = {"erro": str(e)[:60]}
     try:
         rgb, _, n = C._composite_landsat(grid, "2005-06-01/2008-07-21")
-        plt.imsave(d / "rgb_2008.png", C._punch(C._stretch_fixed(rgb, "landsat"))); layers["rgb_2008"] = {"label": "RGB 2008 (Landsat, pré-corte)", "base": True}
+        plt.imsave(d / "rgb_2008.png", _with_peri(C._punch(C._stretch_fixed(rgb, "landsat")), peri)); layers["rgb_2008"] = {"label": "RGB 2008 (Landsat, pré-corte)", "base": True}
     except Exception as e: layers["rgb_2008"] = {"erro": str(e)[:60]}
-    plt.imsave(d / "mapbiomas.png", _mapbiomas(grid)); layers["mapbiomas"] = {"label": "MapBiomas — uso do solo", "base": True}
+    # MapBiomas em dois tempos: pré-2008 (2008) e atual (2023) — mostra a mudança de uso
+    for yr, fn in [(2008, "mapbiomas_2008"), (MB_YEAR, "mapbiomas")]:
+        try:
+            plt.imsave(d / f"{fn}.png", _with_peri(_mapbiomas(grid, yr), peri))
+            layers[fn] = {"label": f"MapBiomas {yr}", "base": True, "ano": yr}
+        except Exception as e:
+            layers[fn] = {"erro": str(e)[:60]}
     # NDVI (vigor da vegetação) — S2 red/nir, cloud-masked median, RdYlGn colormap
     ndvi_val = None
     try:
         nd, _, ndvi_val = C._composite_s2_ndvi(grid, C._recent_window(365))
-        norm = np.clip(nd + 0.1, 0, 1)  # NDVI −0.1..0.9 → 0..1
+        norm = np.clip((nd - 0.20) / 0.45, 0, 1)  # 0.20→vermelho · 0.65→verde (realça áreas abertas)
         rgba = (plt.get_cmap("RdYlGn")(norm) * 255).astype("uint8")
         rgba[..., 3] = np.where(np.isfinite(nd), 255, 0)
-        plt.imsave(d / "ndvi.png", rgba)
+        plt.imsave(d / "ndvi.png", _with_peri(rgba, peri))
         layers["ndvi"] = {"label": "NDVI — vigor da vegetação", "base": True, "valor_medio": ndvi_val}
     except Exception as e: layers["ndvi"] = {"erro": str(e)[:60]}
     # --- overlays (transparent, registered) ---

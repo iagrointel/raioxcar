@@ -58,11 +58,12 @@ def build(cod: str, dsn: str) -> str:
         </div>"""
     # full registered-layer gallery (all the evidence images inside the PDF)
     g_2008 = _img(cdir/"stack"/"rgb_2008.png"); g_decl = _decl_over(cdir)
-    g_mb = _img(cdir/"stack"/"mapbiomas.png"); g_ndvi = _img(cdir/"stack"/"ndvi.png")
+    g_mb = _img(cdir/"stack"/"mapbiomas.png"); g_mb08 = _img(cdir/"stack"/"mapbiomas_2008.png"); g_ndvi = _img(cdir/"stack"/"ndvi.png")
     cells = []
     if g_decl: cells.append((g_decl, "Declarado (SICAR) sobre satélite"))
     if g_2008: cells.append((g_2008, "Pré-2008 (Landsat 30 m)"))
-    if g_mb:   cells.append((g_mb,   "MapBiomas — uso do solo"))
+    if g_mb08: cells.append((g_mb08, "MapBiomas 2008 — uso do solo"))
+    if g_mb:   cells.append((g_mb,   "MapBiomas 2023 — uso do solo"))
     if g_ndvi: cells.append((g_ndvi, f"NDVI — vigor{(' · médio ' + str(ndvi_val)) if ndvi_val is not None else ''}"))
     gallery = ""
     if cells:
@@ -104,7 +105,7 @@ def build(cod: str, dsn: str) -> str:
      <tr><td>Déficit de RL</td><td>{c.get('rl_deficit_ha','—')} ha</td></tr></table>
     {imgs}
     {gallery}
-    <div class='foot'>Dado aberto: Sentinel-2 (AWS) · Landsat-5 (Planetary Computer) · MapBiomas Col.9 · hidrografia IBGE BC250 · SICAR.
+    <div class='foot'>Dado aberto: Sentinel-2 (AWS) · Landsat-5 (Planetary Computer) · MapBiomas Col.9 (2023) · hidrografia IBGE BC250 · SICAR.
     Composição multi-cena sem nuvem. Apoio à decisão / triagem — não constitui base oficial certificada nem auto de infração.
     Identidade do proprietário não exibida (LGPD).<br>SHA-256: {h}<br>Gerado por Raio-X CAR · iAgroSat × iAgroIntel · {ts}</div>
     </body></html>"""
