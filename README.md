@@ -93,6 +93,14 @@ python examples/run_one.py PA-1508308-8684020B3E93495987669D0F44B57C6E
 Saída: o veredito em JSON (divergências, APP/RL, datas). Os geradores de imagem/dossiê
 escrevem em `RAIOX_CACHE`.
 
+## Cruzamento Embargo × CAR (método aberto)
+
+Como ligar embargos ambientais (IBAMA/ICMBio/OEMAs) ao perímetro do CAR por **sobreposição
+espacial** — a camada que nenhum sistema nacional conecta, porque o embargo é arquivado por
+auto/CPF e **nunca** pelo código do CAR. Traga os seus polígonos e rode o cruzamento:
+**[docs/EMBARGO_X_CAR.md](docs/EMBARGO_X_CAR.md)** · helper `engine/embargo_lookup.py`.
+Apenas embargos **ativos**; reconciliação territorial, **sem CPF/CNPJ**.
+
 ## Aviso
 
 Os hectares agregados são **ordem de grandeza** (triagem); casos individuais são calculados
