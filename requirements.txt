@@ -4,6 +4,7 @@ rasterio>=1.3
 shapely>=2.0
 pyproj>=3.4
 numpy>=1.23
+scipy>=1.10   # usado na composição Sentinel-2 (chips)
 Pillow>=9.0   # chips PNG (webapp)
 # opcional — ler perímetro em KML:
 fiona>=1.9
