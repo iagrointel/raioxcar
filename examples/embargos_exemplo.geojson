@@ -1,0 +1,5 @@
+{"type":"FeatureCollection",
+ "_nota":"Polígono ILUSTRATIVO (sintético) só para demonstrar o cruzamento. Os polígonos REAIS são públicos: baixe em IBAMA 'Áreas Embargadas' (servicos.ibama.gov.br/ctf/publico/areasembargadas), ICMBio e OEMAs, converta para GeoJSON e passe em --embargos.",
+ "features":[
+ {"type":"Feature","properties":{"orgao":"IBAMA","nota":"ilustrativo — não é um embargo real"},"geometry":{"type":"Polygon","coordinates":[[[-46.68,-2.10],[-46.66,-2.10],[-46.66,-2.08],[-46.68,-2.08],[-46.68,-2.10]]]}}
+]}

@@ -1,0 +1,42 @@
+{
+ "area_ha": 1270.2,
+ "bioma": "amazonia_floresta",
+ "observado": {
+  "nativa_pct": 30.8,
+  "consolidada_pct": 69.2,
+  "consolidada_2008_pct": 18.1,
+  "expansao_pos2008_ha": 649.1,
+  "expansao_pos2008_pct": 51.1,
+  "anos": [
+   2008,
+   2023
+  ]
+ },
+ "divergencias": [
+  {
+   "tipo": "Consolidada pós-2008 (não qualifica)",
+   "severidade": "grave",
+   "ha": 649.1,
+   "detalhe": "649.1 ha de uso surgiram DEPOIS de 22/07/2008 — eram vegetação nativa em 2008; não qualificam como consolidada."
+  },
+  {
+   "tipo": "Vegetação nativa abaixo do mínimo de Reserva Legal",
+   "severidade": "media",
+   "ha": 624.9,
+   "detalhe": "Nativa observada 31% < mínimo do bioma 80% — déficit aparente de vegetação (a RL averbada confirma no SICAR)."
+  },
+  {
+   "tipo": "APP sobre hidrografia (verificar averbação)",
+   "severidade": "media",
+   "ha": 9.55,
+   "detalhe": "~9.55 ha de faixa de 30 m sobre cursos d'água — verificar se está averbada como APP no SICAR."
+  }
+ ],
+ "rl_min_pct": 80,
+ "app_devida_ha": 9.55,
+ "app_fonte": "OpenStreetMap waterways (proxy público; produção: IBGE BC250)",
+ "verdict": "grave",
+ "grade": "grave",
+ "resumo": "3 divergência(s): Consolidada pós-2008 (não qualifica); Vegetação nativa abaixo do mínimo de Reserva Legal; APP sobre hidrografia (verificar averbação).",
+ "aviso": "Apoio à decisão / triagem sobre dados públicos — NÃO é base oficial certificada nem auto de infração. Sem dados do proprietário (LGPD)."
+}

@@ -66,12 +66,17 @@ def confront(cod_imovel: str, dsn: str, years=(2008, 2023)) -> dict:
     }
 
     # ── declared-side divergences (already computed, deterministic) ──
+    # NB: estas são pendências CADASTRAIS (de averbação). "Omitida/não averbada" ≠ "suprimida".
+    # Não definem "grave" sozinhas — só DANO observado (supressão pós-2008 / embargo ativo)
+    # eleva a triagem a grave (ver gate no veredito). Precisão > recall.
     if not diag.get("has_app") and (diag.get("rios_cruzam") or 0) > 0 \
             and (diag.get("app_omitida_ha") or 0) >= APP_MIN_HA:
-        div.append({"tipo": "APP omitida", "severidade": "grave",
-                    "ha": diag["app_omitida_ha"],
+        app_ha = diag["app_omitida_ha"]
+        div.append({"tipo": "APP omitida (não averbada)", "severidade": "media" if app_ha >= 3.0 else "baixa",
+                    "ha": app_ha,
                     "detalhe": f"Rio oficial cruza o imóvel mas NÃO há APP declarada "
-                               f"(~{diag['app_omitida_ha']} ha pela regra dos 30 m)."})
+                               f"(~{app_ha} ha pela regra dos 30 m). Gap de averbação — a faixa "
+                               f"pode estar preservada; só é dano se houver supressão nela."})
     if (diag.get("rl_deficit_ha") or 0) >= RL_DEF_MIN_HA:
         div.append({"tipo": "Déficit de Reserva Legal", "severidade": "media",
                     "ha": diag["rl_deficit_ha"],
@@ -98,13 +103,25 @@ def confront(cod_imovel: str, dsn: str, years=(2008, 2023)) -> dict:
                         "ha": exp_ha,
                         "detalhe": f"{exp_ha} ha de uso surgiram DEPOIS de 22/07/2008 — eram "
                                    f"vegetação nativa em {years[0]}; não qualificam como área consolidada."})
-        # declarou consolidada mas satélite vê majoritariamente nativa (uso super-declarado)
+        # declarou consolidada mas satélite vê majoritariamente nativa — preserva MAIS que o
+        # declarado (neutro/positivo). Nota de qualidade cadastral, nunca indício de dano.
         if diag.get("has_consol") and (mb.get("nativa_pct") or 0) >= 70 \
                 and (mb.get("consolidada_pct") or 0) <= 20:
-            div.append({"tipo": "Consolidada declarada × nativa observada", "severidade": "media",
+            div.append({"tipo": "Consolidada declarada × nativa observada", "severidade": "baixa",
                         "ha": None,
                         "detalhe": f"Imóvel declara área consolidada, mas o satélite vê "
-                                   f"{mb.get('nativa_pct'):.0f}% de vegetação nativa hoje."})
+                                   f"{mb.get('nativa_pct'):.0f}% de vegetação nativa — preserva MAIS "
+                                   f"que o declarado (CAR a atualizar), sem indício de dano."})
+        # RL: com nativa abundante, o 'déficit' declarado é de averbação, não de vegetação.
+        if (mb.get("nativa_pct") or 0) >= (diag.get("rl_min_pct") or 0):
+            for d2 in div:
+                if d2["tipo"] == "Déficit de Reserva Legal":
+                    d2["tipo"] = "Reserva Legal não averbada"
+                    d2["severidade"] = "baixa"
+                    d2["detalhe"] = (f"RL averbada {diag.get('rl_pct')}% < mínimo "
+                                     f"{diag.get('rl_min_pct')}%, mas o satélite vê "
+                                     f"{mb.get('nativa_pct'):.0f}% de nativa — déficit de "
+                                     f"averbação, não de vegetação.")
         # CAR desatualizado: não declara consolidada mas satélite vê uso dominante
         if not diag.get("has_consol") and (mb.get("consolidada_pct") or 0) >= 50:
             div.append({"tipo": "Uso observado não declarado (CAR desatualizado)", "severidade": "baixa",
@@ -115,20 +132,26 @@ def confront(cod_imovel: str, dsn: str, years=(2008, 2023)) -> dict:
         out["observado_erro"] = str(e)[:160]
 
     # ── verdict + grade ──
+    # DANO observado define "grave": supressão pós-2008 (consolidada falsa) ou embargo ativo.
+    # Pendências cadastrais (APP/RL não averbada, consolidada×nativa) sozinhas ficam em
+    # "divergente" — um imóvel com alta vegetação nativa NUNCA é "grave" só por averbação.
     sev_rank = {"grave": 3, "media": 2, "baixa": 1}
     worst = max([sev_rank.get(d["severidade"], 0) for d in div], default=0)
-    if worst >= 3:
+    obs = out["observado"] or {}
+    exp_ha = obs.get("expansao_pos2008_ha") or 0.0
+    exp_pct = obs.get("expansao_pos2008_pct") or 0.0
+    dano = (exp_ha >= EXP_GRAVE_HA and exp_pct >= EXP_GRAVE_PCT)
+
+    if dano:
         out["verdict"] = "grave"
     elif worst >= 1:
         out["verdict"] = "divergente"
     else:
         out["verdict"] = "conforme"
 
-    obs = out["observado"] or {}
-    exp_ha = obs.get("expansao_pos2008_ha") or 0.0
-    if worst >= 3 or exp_ha >= EXP_GRAVE_HA:
+    if dano:
         out["grade"] = "grave"
-    elif exp_ha >= 2.0:
+    elif exp_ha >= 2.0 and exp_pct >= 2.0:
         out["grade"] = "degradando"
     elif (obs.get("consolidada_pct") or 0) >= 50:
         out["grade"] = "consolidado"

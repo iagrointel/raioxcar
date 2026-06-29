@@ -1,0 +1,15 @@
+# Raio-X CAR — núcleo aberto. Tudo roda sobre dados públicos.
+# O fluxo BYO-perímetro (examples/analyze_aoi.py) precisa só de:
+rasterio>=1.3
+shapely>=2.0
+pyproj>=3.4
+numpy>=1.23
+# opcional — ler perímetro em KML:
+fiona>=1.9
+# o fluxo institucional (examples/run_one.py, confronto com o DECLARADO no SICAR) também usa:
+fastapi>=0.110
+uvicorn>=0.27
+pystac-client>=0.7
+planetary-computer>=1.0
+matplotlib>=3.7
+weasyprint>=60
