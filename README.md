@@ -1,5 +1,7 @@
 # Raio-X CAR — núcleo aberto (open-core)
 
+**🇧🇷 Português** · [🇬🇧 English](README.en.md)
+
 **A declaração do CAR bate com o satélite?**
 
 Raio-X CAR confronta, **imóvel a imóvel**, o que o produtor **declarou no SICAR**
@@ -12,11 +14,6 @@ Tudo a partir de **dados abertos** — **sem Google Earth Engine e sem ArcGIS**.
 > 🇧🇷 haCARthon · **Desafio 2** (dados geoespaciais do CAR) · iAgroIntel
 > Apoio à decisão / **triagem institucional** — **não** é base oficial certificada nem auto de
 > infração. Identidade do proprietário **não** é exibida (LGPD, sem CPF/CNPJ).
-
-> 🇬🇧 **In one line:** X-ray *any* rural perimeter in Brazil against open satellite data — native
-> vs. consolidated cover, post-2008 clearing, riparian buffers, and an **active-embargo overlay** —
-> with **no account, no API key, and no Earth Engine**. Decision-support triage, not an official
-> certificate.
 
 ---
 
@@ -42,10 +39,6 @@ Saída (veja [`examples/saida_exemplo.json`](examples/saida_exemplo.json) — pe
  "resumo": "3 divergência(s): Consolidada pós-2008 (não qualifica); ..."
 }
 ```
-
-> 🇬🇧 **No database required.** `analyze_aoi.py` takes a polygon and runs the *observed* side from
-> public data only (MapBiomas COG + OpenStreetMap hydrography). The *declared* side at national
-> scale is the service (below).
 
 ### Cruzamento Embargo × perímetro (a camada distinta do Raio-X)
 
