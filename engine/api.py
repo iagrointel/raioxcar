@@ -15,12 +15,10 @@ from fastapi import FastAPI, HTTPException, Body
 from fastapi.responses import JSONResponse, FileResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__),"..","pipeline"))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__),"..","pipeline"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "pipeline"))
 sys.path.insert(0, str(Path(__file__).parent))
 import confront as _confront
 import suggest as _suggest
-import sentinel_rgb
 import landsat_rgb
 import crisp_rgb
 import dossie as _dossie

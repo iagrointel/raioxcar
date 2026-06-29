@@ -17,7 +17,21 @@ Tudo a partir de **dados abertos** — **sem Google Earth Engine e sem ArcGIS**.
 
 ---
 
-## ⚡ Comece em 30 s — X-ray de qualquer perímetro (sem banco, sem chave)
+## 🛰️ Modo mapa — clone, **1 comando**, e investigue no navegador
+
+```bash
+pip install -r requirements.txt
+python -m webapp.server          # abre http://127.0.0.1:8055
+```
+
+Um **mapa de satélite do Brasil** (Esri · Sentinel-2 cloudless · OSM) onde você **✏️ desenha** um
+polígono, **📂 importa** um KML/GeoJSON ou **🔍 busca** um lugar → clica **Analisar** → veredito +
+% nativa/consolidada + **supressão pós-2008** + APP + **satélite antes × depois (2008 × hoje)**.
+Tudo dado aberto, **sem banco e sem chave** — analisa **um perímetro por vez** (o que você traz).
+
+---
+
+## ⚡ Ou via linha de comando — X-ray de qualquer perímetro (sem banco, sem chave)
 
 Você traz **um polígono** (GeoJSON ou KML — baixe o perímetro de um CAR na
 [consulta pública do SICAR](https://consultapublica.car.gov.br/publico/imoveis/index),
@@ -137,6 +151,9 @@ engine/
   dossie.py          # dossiê por imóvel em PDF (hash SHA-256)
   api.py             # serviço FastAPI (endpoints por imóvel)
   per_uf_rules.json  # regras de RL/PRA/PRADA/CRA-PSA das 27 UFs, com citações
+webapp/
+  server.py          # ★ app FastAPI local (sem banco): /api/analyze + /api/chips
+  index.html         # ★ mapa Leaflet: desenhar/importar/buscar → veredito + antes×depois
 pipeline/
   aoi_analyze.py     # ★ X-ray BYO-perímetro, só dados públicos (sem banco)
   mapbiomas_cross.py # cruzamento MapBiomas (nativa/consolidada/pós-2008)

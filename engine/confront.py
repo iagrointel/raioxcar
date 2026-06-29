@@ -11,9 +11,8 @@ Verdict = conforme | divergente | grave ; grade = bom | consolidado | degradando
 Framing: triagem / apoio à decisão — não é a base oficial certificada.
 """
 from __future__ import annotations
-import sys, json, argparse
-sys.path.insert(0, os.path.join(os.path.dirname(__file__),"..","pipeline"))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__),"..","pipeline"))
+import os, sys, json, argparse
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "pipeline"))
 
 import fix_my_car
 import mapbiomas_cross

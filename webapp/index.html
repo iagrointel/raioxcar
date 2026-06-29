@@ -1,0 +1,154 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raio-X CAR · Investigador</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.16.0/dist/leaflet-geoman.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.css">
+<style>
+:root{--bg:#060d0a;--pan:#0c1714;--line:#1c2c26;--grn:#3ce790;--mut:#7f988e;--txt:#dcefe4;
+ --amber:#ffb454;--red:#ff6b5b;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--txt);
+ font-family:'Bricolage Grotesque',system-ui,sans-serif}
+#app{display:flex;height:100%}#map{flex:1;background:#04100b}
+#side{width:380px;flex:none;background:var(--pan);border-left:1px solid var(--line);
+ display:flex;flex-direction:column;overflow:auto}
+.hd{padding:16px 18px;border-bottom:1px solid var(--line)}
+.hd h1{margin:0;font-size:17px;letter-spacing:-.3px}.hd h1 b{color:var(--grn)}
+.hd p{margin:6px 0 0;font-size:11.5px;color:var(--mut);line-height:1.45}
+.sec{padding:14px 18px;border-bottom:1px solid var(--line)}
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut);margin-bottom:9px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.btn{background:#0f201a;border:1px solid var(--line);color:var(--txt);border-radius:9px;
+ padding:9px 12px;font-size:12.5px;cursor:pointer;display:flex;align-items:center;gap:7px}
+.btn:hover{border-color:var(--grn);color:var(--grn)}
+.btn.go{background:var(--grn);color:#04140c;border-color:var(--grn);font-weight:700;width:100%;justify-content:center;padding:12px;font-size:14px}
+.btn.go:disabled{opacity:.5;cursor:wait}
+select,input[type=file]{width:100%;background:#0f201a;border:1px solid var(--line);color:var(--txt);
+ border-radius:8px;padding:9px;font-size:12.5px;margin-top:6px}
+.muted{color:var(--mut);font-size:11.5px;line-height:1.5}
+.verd{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.badge{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:1px;padding:5px 11px;border-radius:7px;text-transform:uppercase}
+.b-conforme{background:#10361f;color:#7be3a6}.b-divergente{background:#3a3014;color:var(--amber)}.b-grave{background:#3a1414;color:var(--red)}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.kpi{background:#0f201a;border:1px solid var(--line);border-radius:9px;padding:10px}
+.kpi .n{font-size:21px;font-weight:800;letter-spacing:-.5px}.kpi .l{font-family:var(--mono);font-size:9px;text-transform:uppercase;color:var(--mut);margin-top:3px}
+.div{display:flex;gap:8px;font-size:12px;line-height:1.45;margin:8px 0;color:#cfe} .div .dot{width:8px;height:8px;border-radius:50%;flex:none;margin-top:5px}
+.dot.grave{background:var(--red)}.dot.media{background:var(--amber)}.dot.baixa{background:#2f7fc4}
+.chips{display:flex;gap:8px;margin-top:10px}.chips figure{flex:1;margin:0}
+.chips img{width:100%;border:1px solid var(--line);border-radius:8px;display:block;background:#04100b;min-height:90px}
+.chips figcaption{font-family:var(--mono);font-size:9px;color:var(--mut);margin-top:4px;text-align:center}
+.foot{padding:12px 18px;font-size:10px;color:var(--mut);line-height:1.5}
+.spin{display:inline-block;width:13px;height:13px;border:2px solid #04140c;border-top-color:transparent;border-radius:50%;animation:s .7s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+.leaflet-control-geocoder{border-radius:9px!important}
+</style></head><body>
+<div id="app">
+  <div id="map"></div>
+  <aside id="side">
+    <div class="hd">
+      <h1>Raio-<b>X</b> CAR · Investigador</h1>
+      <p>Desenhe, importe um KML/GeoJSON ou busque um lugar. Roda o X-ray de satélite sobre <b>dados
+      públicos</b> — sem conta, sem chave. Apoio à decisão; não é base oficial. Sem dados de pessoa.</p>
+    </div>
+    <div class="sec">
+      <div class="lbl">1 · Defina um perímetro</div>
+      <div class="tools">
+        <button class="btn" id="draw">✏️ Desenhar</button>
+        <label class="btn">📂 Importar KML/GeoJSON<input id="file" type="file" accept=".kml,.geojson,.json" hidden></label>
+        <button class="btn" id="clear">✕ Limpar</button>
+      </div>
+      <div class="muted" style="margin-top:9px">Ou busque um lugar no campo de pesquisa do mapa (canto superior esquerdo).</div>
+    </div>
+    <div class="sec">
+      <div class="lbl">2 · Bioma (régua de Reserva Legal)</div>
+      <select id="bioma">
+        <option value="">— sem régua de RL —</option>
+        <option value="amazonia_floresta">Amazônia (floresta) · 80%</option>
+        <option value="amazonia_cerrado">Amazônia (cerrado) · 35%</option>
+        <option value="cerrado">Cerrado · 20%</option>
+        <option value="caatinga" selected>Caatinga · 20%</option>
+        <option value="mata_atlantica">Mata Atlântica · 20%</option>
+        <option value="pampa">Pampa · 20%</option>
+        <option value="pantanal">Pantanal · 20%</option>
+      </select>
+      <label class="muted" style="display:flex;gap:7px;margin-top:9px;align-items:center">
+        <input type="checkbox" id="rivers" checked> incluir APP (hidrografia pública · mais lento)</label>
+    </div>
+    <div class="sec">
+      <button class="btn go" id="run" disabled>Analisar perímetro</button>
+      <div id="result"></div>
+    </div>
+    <div class="foot">
+      100% dados abertos: Sentinel-2 (AWS) · Landsat (Planetary Computer) · MapBiomas (COG) ·
+      OpenStreetMap. Sem Google Earth Engine, sem ArcGIS. Um perímetro por vez.
+    </div>
+  </aside>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.16.0/dist/leaflet-geoman.min.js"></script>
+<script src="https://unpkg.com/@tmcw/togeojson@5.8.1/dist/togeojson.umd.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.js"></script>
+<script>
+const map = L.map('map',{zoomControl:true}).setView([-14.5,-52],4);
+const esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'Esri'}).addTo(map);
+const eox = L.tileLayer('https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2023_3857/default/g/{z}/{y}/{x}.jpg',{maxZoom:16,attribution:'EOX · Sentinel-2 cloudless'});
+const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'OSM'});
+L.control.layers({'Satélite (Esri)':esri,'Sentinel-2 cloudless':eox,'Mapa (OSM)':osm},null,{collapsed:true}).addTo(map);
+L.Control.geocoder({defaultMarkGeocode:true,placeholder:'Buscar um lugar…',collapsed:false}).addTo(map);
+
+let layer=null;
+function setLayer(l){ if(layer) map.removeLayer(layer); layer=l; layer.addTo(map);
+  try{map.fitBounds(layer.getBounds(),{maxZoom:15,padding:[30,30]});}catch(e){}
+  document.getElementById('run').disabled=false; document.getElementById('result').innerHTML=''; }
+function curGeoJSON(){ if(!layer) return null; const g=layer.toGeoJSON();
+  return g.type==='FeatureCollection'?g:{type:'FeatureCollection',features:[g.type==='Feature'?g:{type:'Feature',geometry:g,properties:{}}]}; }
+
+map.pm.setGlobalOptions({pathOptions:{color:'#3ce790',fillColor:'#3ce790',fillOpacity:.18,weight:2}});
+document.getElementById('draw').onclick=()=>map.pm.enableDraw('Polygon',{snappable:false});
+map.on('pm:create',e=>{ map.pm.disableDraw(); setLayer(L.geoJSON(e.layer.toGeoJSON(),{style:{color:'#3ce790',fillOpacity:.18}})); e.layer.remove(); });
+document.getElementById('clear').onclick=()=>{ if(layer){map.removeLayer(layer);layer=null;} document.getElementById('run').disabled=true; document.getElementById('result').innerHTML=''; };
+
+document.getElementById('file').onchange=ev=>{
+  const f=ev.target.files[0]; if(!f) return; const r=new FileReader();
+  r.onload=()=>{ try{ let gj;
+    if(f.name.toLowerCase().endsWith('.kml')){ const dom=new DOMParser().parseFromString(r.result,'text/xml'); gj=toGeoJSON.kml(dom); }
+    else gj=JSON.parse(r.result);
+    setLayer(L.geoJSON(gj,{style:{color:'#3ce790',fillOpacity:.18}}));
+  }catch(e){ alert('Não consegui ler o arquivo: '+e); } };
+  r.readAsText(f);
+};
+
+const fmt=(v,d=1)=>v==null?'—':Number(v).toLocaleString('pt-BR',{maximumFractionDigits:d});
+document.getElementById('run').onclick=async()=>{
+  const gj=curGeoJSON(); if(!gj) return;
+  const btn=document.getElementById('run'); btn.disabled=true; btn.innerHTML='<span class="spin"></span> analisando…';
+  const res=document.getElementById('result'); res.innerHTML='<p class="muted" style="margin-top:12px">Lendo MapBiomas e hidrografia pública…</p>';
+  try{
+    const r=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({geometry:gj,bioma:document.getElementById('bioma').value||null,rivers:document.getElementById('rivers').checked})});
+    if(!r.ok) throw new Error((await r.json()).detail||r.status);
+    const d=await r.json(); const o=d.observado||{};
+    const divs=(d.divergencias||[]).map(x=>`<div class="div"><span class="dot ${x.severidade}"></span><div><b>${x.tipo}</b>${x.ha?` · ${fmt(x.ha)} ha`:''}<br><span class="muted">${x.detalhe||''}</span></div></div>`).join('')||'<div class="muted">Sem divergências relevantes na triagem.</div>';
+    res.innerHTML=`
+      <div class="verd" style="margin-top:14px"><span class="badge b-${d.verdict}">${d.verdict}</span><span class="muted">${fmt(d.area_ha)} ha · grade ${d.grade}</span></div>
+      <div class="kpis">
+        <div class="kpi"><div class="n" style="color:var(--grn)">${fmt(o.nativa_pct)}%</div><div class="l">vegetação nativa</div></div>
+        <div class="kpi"><div class="n" style="color:var(--amber)">${fmt(o.consolidada_pct)}%</div><div class="l">uso consolidado</div></div>
+        <div class="kpi"><div class="n" style="color:var(--red)">${fmt(o.expansao_pos2008_ha)}</div><div class="l">ha de supressão pós-2008</div></div>
+        <div class="kpi"><div class="n">${fmt(d.app_devida_ha)}</div><div class="l">ha de APP (faixa 30m)</div></div>
+      </div>
+      <div class="lbl" style="margin-top:6px">Divergências</div>${divs}
+      <div class="lbl" style="margin-top:14px">Satélite · antes × depois</div>
+      <div class="chips" id="chips"><figure><img id="c08" alt="2008"><figcaption>carregando 2008…</figcaption></figure><figure><img id="cnow" alt="hoje"><figcaption>carregando hoje…</figcaption></figure></div>
+      <p class="muted" style="margin-top:10px">${d.aviso||''}</p>`;
+    // chips (slow, best-effort)
+    fetch('/api/chips',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({geometry:gj})})
+      .then(x=>x.json()).then(c=>{
+        const set=(id,o,cap)=>{const img=document.getElementById(id);const fc=img.nextElementSibling;
+          if(o&&o.png){img.src=o.png;fc.textContent=cap+(o.data?` · ${o.data}`:'');}else{fc.textContent=cap+' (sem cena)';}};
+        set('c08',c.pre2008,'pré-2008 (Landsat)'); set('cnow',c.hoje,'hoje (Sentinel-2)');
+      }).catch(()=>{});
+  }catch(e){ res.innerHTML=`<p class="muted" style="margin-top:12px;color:var(--red)">Falha: ${e.message||e}</p>`; }
+  btn.disabled=false; btn.textContent='Analisar perímetro';
+};
+</script></body></html>

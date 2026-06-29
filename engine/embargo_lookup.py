@@ -8,10 +8,9 @@ by SPATIAL overlap (embargo polygon ∩ perimeter, or embargo point ∈ perimete
   - emb_attr(gid, fonte, ... attributes ...)                       — per-embargo dissection
 Key = (fonte, gid). tipo='embargo' is the headline; tipo='auto_infracao' (MS) is secondary.
 
-This is a DIFFERENT, harder axis than the CPF lens (mv_embargo_cpf_all_cars /
-product_n6_embargo_evasion): not "owner embargoed somewhere", but "an active embargo
-sits physically ON this declared property". Source data is OPEN (transparência ambiental);
-no CPF/CNPJ is stored or shown.
+This is a DIFFERENT, harder axis than the owner-CPF lens of the institutional product:
+not "owner embargoed somewhere", but "an active embargo sits physically ON this declared
+property". Source data is OPEN (transparência ambiental); no CPF/CNPJ is stored or shown.
 """
 from __future__ import annotations
 import json, subprocess

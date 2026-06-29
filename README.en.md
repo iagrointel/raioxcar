@@ -22,7 +22,21 @@ Legal Reserve = a % of native vegetation each property must keep, by biome.)*
 
 ---
 
-## ⚡ Start in 30 s — X-ray any perimeter (no database, no key)
+## 🛰️ Map mode — clone, **one command**, investigate in your browser
+
+```bash
+pip install -r requirements.txt
+python -m webapp.server          # opens http://127.0.0.1:8055
+```
+
+A **satellite map of Brazil** (Esri · Sentinel-2 cloudless · OSM) where you **✏️ draw** a polygon,
+**📂 import** a KML/GeoJSON, or **🔍 search** a place → click **Analisar** → verdict + % native/
+consolidated + **post-2008 clearing** + APP + **before × after satellite (2008 × today)**.
+All open data, **no database and no key** — analyzes **one perimeter at a time** (the one you bring).
+
+---
+
+## ⚡ Or via command line — X-ray any perimeter (no database, no key)
 
 You bring **one polygon** (GeoJSON or KML — download a CAR perimeter from the
 [SICAR public consultation](https://consultapublica.car.gov.br/publico/imoveis/index),

@@ -4,8 +4,8 @@ Deterministic corrections derivable from open data: the would-be APP (rio buffer
 the crossing official river, and the perimeter — packaged as GeoJSON + KML for the analyst/produtor
 to adopt. (RL placement is a producer choice → we output the déficit number, not a polygon.)"""
 from __future__ import annotations
-import sys, json, argparse
-sys.path.insert(0, os.path.join(os.path.dirname(__file__),"..","pipeline"))
+import os, sys, json, argparse
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "pipeline"))
 import fix_my_car
 
 
